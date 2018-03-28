@@ -70,10 +70,14 @@ void menuOptions(){
 
 	    case KEY_F(1):
 			displayLoadAndExit();
+			napms(1000);
+			endwin();
+			exit(1);
 
 		    break;
 
 		case KEY_F(8):
+			displayLoadAndExit();
 			clear();
 			about();
 		    break;
@@ -106,10 +110,6 @@ void displayLoadAndExit(){
 	}
 
 	attroff(COLOR_PAIR(2)|A_BOLD);
-
-	napms(1000);
-	endwin();
-	exit(1);
 }
 
 void keyb_menu(int item,int keyb_run,char *str[]){
